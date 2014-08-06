@@ -1,0 +1,20 @@
+{
+  "name": "base64codec",
+  "version": "0.0.4",
+  "main": "base64codec.js",
+  "ignore": [
+    ".*",
+    "node_modules"
+  ],
+  "dependencies": {},
+  "homepage": "https://github.com/chick307/base64codec",
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.4",
+    "commit": "43088e43d82776be77ba76bd404d51c56c846fd9"
+  },
+  "_source": "git://github.com/chick307/base64codec.git",
+  "_target": "~0.0.4",
+  "_originalSource": "base64codec"
+}

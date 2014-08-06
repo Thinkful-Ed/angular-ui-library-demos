@@ -1,0 +1,63 @@
+<div class="repo-collabs">
+  <img ng-repeat="collab in repo.collabs"
+       ng-src="{{ collab.avatar_url }}"
+       title="{{ collab.login }}"
+       tooltip-placement="top"
+       tooltip="{{ collab.login }}"
+       class="collab-avatar" />
+</div>
+
+<div class="repo-profile">
+  <h2>{{ repo.title }}</h2>
+
+  <div ng-hide="!hide" class="repo-details">
+    <div class="labels">
+      <div class="label label-default">
+        {{ repo.details.commits_count }} Commits
+      </div>
+      <div class="label label-danger">
+        {{ repo.details.open_issues }} Issues
+      </div>
+      <div class="label label-primary">
+        {{ repo.details.forks }} Forks
+      </div>
+      <div class="label label-success">
+        {{ repo.details.watchers }} Watchers
+      </div>
+      <span ng-controller="ModalCtrl as modal" repo="repo">
+        <button class="btn btn-default" ng-click="modal.show()">... More Info ...</button>
+      </span>
+    </div>
+	</div>
+
+  <a href="" ng-click="hide=!hide" class="btn btn-default">Show / Hide Details</a>
+
+  <hr />
+
+  <tabset>
+    <tab heading="README">
+      <div class="repo-readme">
+        {{ repo.readme }}
+      </div>
+    </tab>
+
+    <tab heading="Issues">
+      <div class="repo-issues">
+        <a ng-href="{{ issue.url }}" ng-repeat="issue in repo.issues" class="issue-entry">
+          <h4>{{ issue.title }}</h4>
+          <strong>{{ issue.user.login }}</strong>
+        </a>
+      </div>
+    </tab>
+
+    <tab heading="Commits">
+      <div class="repo-commits">
+        <a ng-href="{{ commit.url }}" ng-repeat="commit in repo.commits" class="commit-entry">
+          <h4>{{ commit.commit.message }}</h4>
+          <strong>{{ commit.committer.login }}</strong>
+          <sup>{{ commit.sha }}</sup>
+        </a>
+      </div>
+    </tab>
+  </tabset>
+</div>

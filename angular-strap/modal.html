@@ -1,0 +1,36 @@
+<div class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+<div class="modal-header">
+  <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+  <p>
+    <strong>Homepage</strong>:
+    <a target="_blank" href="{{ repo.details.homepage }}">{{ repo.details.homepage }}</a>
+  </p>
+  <p>
+    <strong>Last Updated</strong>:
+    <time>{{ repo.details.updated_at | date }}</time>
+  </p>
+  <p>
+    <strong>Github Page: </strong>:
+    <a target="_blank" href="{{ repo.details.url }}">{{ repo.details.url }}</a>
+  </p>
+  <p>
+    <strong>Commits Page: </strong>:
+    <a target="_blank" href="{{ repo.details.commits_url }}">{{ repo.details.commits_url }}</a>
+  </p>
+  <p>
+    <strong>Branches Page: </strong>:
+    <a target="_blank" href="{{ repo.details.branches_url }}">{{ repo.details.branches_url }}</a>
+  </p>
+  <p>
+    <strong>SSH URL: </strong>:
+    <a target="_blank" href="{{ repo.details.ssh_url }}">{{ repo.details.ssh_url }}</a>
+  </p>
+</div>
+
+    </div>
+  </div>
+</div>
