@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/foundation.css" />
   <link rel="stylesheet" type="text/css" href="../shared/app.css" />
 </head>
-<body ng-controller="AppCtrl as app" class="{ready:ready}">
+<body ng-controller="AppCtrl as app" ng-class="{loading:!ready}" class="loading">
 
   <div class="app-grid">
     <div class="app-left" app-menu></div>

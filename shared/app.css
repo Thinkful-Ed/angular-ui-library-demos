@@ -129,3 +129,40 @@
 .modal-backdrop {
   opacity:0.4;
 }
+
+body.loading:before {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(255,255,255,0.5);
+  content:"";
+  z-index:1000;
+}
+body.loading:after {
+  width:100px;
+  height:100px;
+  content:"";
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-top:-50px;
+  margin-left:-50px;
+  border:10px solid maroon;
+  border-left-color:transparent;
+  border-right-color:transparent;
+  border-radius:100px;
+  z-index:1001;
+  -webkit-animation: rotate 0.8s infinite;
+  animation: rotate 0.8s infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(359deg);
+  }
+}

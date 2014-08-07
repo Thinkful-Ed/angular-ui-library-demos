@@ -61,9 +61,9 @@ angular.module('SharedGhApp', ['gh', 'ngRoute'])
       return ctrl.searchTerm;
     }, function(q) {
       q = q || 'Angular';
-      $scope.$broadcast('appLoading');
+      $scope.$emit('appLoading');
       ghRepos(q).then(function(repos) {
-        $scope.$broadcast('appReady');
+        $scope.$emit('appReady');
         ctrl.repos = repos;
       });
     });
@@ -75,8 +75,8 @@ angular.module('SharedGhApp', ['gh', 'ngRoute'])
 
   }])
 
-  .controller('RepoCtrl', ['$scope', 'repo', 'ghRepoCollaborators', 'ghRepoReadme', 'ghRepoIssues', 'ghRepoCommits',
-                   function($scope,   repo,   ghRepoCollaborators,   ghRepoReadme,   ghRepoIssues,   ghRepoCommits) {
+  .controller('RepoCtrl', ['$scope', 'repo', 'ghRepoCollaborators', 'ghRepoReadme', 'ghRepoIssues', 'ghRepoCommits', '$q',
+                   function($scope,   repo,   ghRepoCollaborators,   ghRepoReadme,   ghRepoIssues,   ghRepoCommits, $q) {
 
     var ctrl = this;
     var owner = repo.owner.login;
@@ -86,20 +86,26 @@ angular.module('SharedGhApp', ['gh', 'ngRoute'])
 
     this.title = owner + '/' + name;
     
-    ghRepoCollaborators(owner, name).then(function(results) {
+    var requests = [];
+
+    requests.push(ghRepoCollaborators(owner, name).then(function(results) {
       ctrl.collabs = results;
-    });
+    }));
 
-    ghRepoReadme(owner, name).then(function(readme) {
+    requests.push(ghRepoReadme(owner, name).then(function(readme) {
       ctrl.readme = readme;
-    });
+    }));
 
-    ghRepoIssues(owner, name).then(function(issues) {
+    requests.push(ghRepoIssues(owner, name).then(function(issues) {
       ctrl.issues = issues;
-    });
+    }));
 
-    ghRepoCommits(owner, name).then(function(commits) {
+    requests.push(ghRepoCommits(owner, name).then(function(commits) {
       ctrl.commits = commits;
+    }));
+
+    $q.all(requests).then(function() {
+      $scope.$emit('appReady');
     });
   }])
 
