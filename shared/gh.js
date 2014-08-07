@@ -2,7 +2,7 @@ angular.module('gh', ['base64'])
 
   .value('ghHost', 'https://api.github.com/')
 
-  .value('ghAuth', 'client_id=ff3b419eaba1a6ea958b&client_secret=94f4a4bfc7e5c4b51cab68dcbeb3143e92de921e')
+  .value('ghAuth', 'client_id=ab9b0c9fb30bd2f252e1&client_secret=cbe95f66c4641110dafefba69c25114f9c38d10b')
 
   .factory('ghRequest', function($http, $rootScope, $q, ghHost, ghAuth) {
     return function(path) {
