@@ -10,9 +10,9 @@ angular.module('AngularStrapApp', ['SharedGhApp', 'mgcrea.ngStrap'])
     this.activeTab = 0;
 
     this.tabs = [
-      { title : "README", template: "/README-tab.html" },
-      { title : "Issues", template: "/issues-tab.html" },
-      { title : "Commits", template: "/commits-tab.html" }
+      { title : "README", template: "./README-tab.html" },
+      { title : "Issues", template: "./issues-tab.html" },
+      { title : "Commits", template: "./commits-tab.html" }
     ];
   }])
 

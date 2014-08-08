@@ -1,0 +1,11 @@
+<div class="list-of-repos">
+  <form class="search-form"> 
+    <input type="text" placeholder="Search..." ng-model="q" delay="app.searchTerm=q"  />
+  </form>
+  <a href="#/repo/{{ repo.owner.login }}/{{ repo.name }}" ng-repeat="repo in app.repos" class="repo-entry">
+    <span class="index">{{ $index + 1 }}</span>
+    <div class="details">
+      <h2 class="heading">{{ repo.name }}</h2>
+    </div>
+  </a>
+</div>
