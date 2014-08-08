@@ -1,8 +1,8 @@
 angular.module('SharedGhApp', ['gh', 'ngRoute'])
 
-  .config(['$locationProvider','$routeProvider', function($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     
-    $locationProvider.html5Mode(true);
+
     $routeProvider.when('/', {
       templateUrl : '/shared/empty.html',
       controller : 'EmptyCtrl'
