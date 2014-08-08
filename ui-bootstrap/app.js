@@ -6,7 +6,7 @@ angular.module('BootstrapApp', ['SharedGhApp', 'ui.bootstrap'])
       var modalScope = $scope.$new();
       modalScope.repo = repo;
       var modalInstance = $modal.open({
-        templateUrl: './modal.html',
+        templateUrl: 'modal.html',
         controller: 'ModalInstanceCtrl',
         scope: modalScope
       });

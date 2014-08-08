@@ -4,7 +4,7 @@ angular.module('SharedGhApp', ['gh', 'ngRoute'])
     
 
     $routeProvider.when('/', {
-      templateUrl : '/shared/empty.html',
+      templateUrl : 'shared/empty.html',
       controller : 'EmptyCtrl'
     });
 
@@ -21,7 +21,7 @@ angular.module('SharedGhApp', ['gh', 'ngRoute'])
 
   .directive('appMenu', function() {
     return {
-      templateUrl : '/shared/menu.html'
+      templateUrl : 'shared/menu.html'
     }
   })
 
