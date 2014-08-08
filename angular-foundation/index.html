@@ -2,9 +2,10 @@
 <html ng-app="FoundationApp">
 <head>
   <title>My Angular App</title>
-  <link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="../bower_components/foundation/css/foundation.css" />
-  <link rel="stylesheet" type="text/css" href="../shared/app.css" />
+  <base href="thinkful-angular-ui-libraries/" />
+  <link rel="stylesheet" type="text/css" href="bower_components/foundation/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/foundation/css/foundation.css" />
+  <link rel="stylesheet" type="text/css" href="shared/app.css" />
 </head>
 <body ng-controller="AppCtrl as app" ng-class="{loading:!ready}" class="loading">
 
@@ -15,15 +16,15 @@
     </div>
   </div>
 
-<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="../bower_components/base64codec/base64codec.js"></script>
-<script type="text/javascript" src="../bower_components/angular-foundation/mm-foundation.js"></script>
-<script type="text/javascript" src="../bower_components/angular-foundation/mm-foundation-tpls.js"></script>
-<script type="text/javascript" src="../shared/base64.js"></script>
-<script type="text/javascript" src="../shared/gh.js"></script>
-<script type="text/javascript" src="../shared/app.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="bower_components/base64codec/base64codec.js"></script>
+<script type="text/javascript" src="bower_components/angular-foundation/mm-foundation.js"></script>
+<script type="text/javascript" src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
+<script type="text/javascript" src="shared/base64.js"></script>
+<script type="text/javascript" src="shared/gh.js"></script>
+<script type="text/javascript" src="shared/app.js"></script>
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
